@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import Header from './Header';
+import DonationForm from './DonationForm';
+import About from './About';
+import Contact from './Contact';
+import Footer from './Footer';
+
 function App() {
+  const [totalDonations, setTotalDonations] = useState(0);
+
+  const handleDonation = (amount) => {
+    // Implement donation processing logic here (e.g., sending data to a server).
+    // For simplicity, we'll just update the total donations for this example.
+    setTotalDonations((prevTotal) => prevTotal + amount);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header />
+      <main>
+        <h1>Welcome to the Temple Renovation Fundraiser</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Help us raise funds for the renovation of our beloved temple. Every
+          donation counts!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <DonationForm onDonation={handleDonation} />
+        <div className="total-donations">
+        <p>Total Donations: ${totalDonations.toFixed(2)}</p>
+      </div>
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+      
     </div>
   );
 }
 
 export default App;
+
