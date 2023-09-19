@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Connect to MongoDB (replace 'your-database-url' with your actual MongoDB connection URL)
-mongoose.connect('mongodb://your-database-url', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('postgresql://postgres:GMFundraiser123#@db.jnzjpwilnfcwwxgilosz.supabase.co:5432/postgres', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
