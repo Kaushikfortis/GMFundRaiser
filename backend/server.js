@@ -46,7 +46,7 @@ app.listen(port, () => {
 const mongoose = require('mongoose');
 
 // Replace YOUR_MONGODB_URI with your actual MongoDB URI
-const mongoURI = 'mongodb+srv://kaushik:Pass@123@donors.0v5hnbm.mongodb.net/?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://kaushik:<Password>@donors.0v5hnbm.mongodb.net/FundRaiserDB?retryWrites=true&w=majority';
 
 // Connect to MongoDB
 mongoose
